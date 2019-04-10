@@ -1,0 +1,21 @@
+﻿@using EPiServer.Core
+
+@{
+    // Get a reference to the IContentRepository
+    var cr = EPiServer.ServiceLocation.ServiceLocator.Current.GetInstance<EPiServer.IContentRepository>();
+    // Get the child pages of the start page.
+    var childPages = cr.GetChildren<PageData>(ContentReference.StartPage);
+}
+
+<b>@Html.PageLink(ContentReference.StartPage)</b>
+@foreach (var page in childPages)
+{
+    if (page.VisibleInMenu == true)
+    {
+        <b>
+            -:-
+            @Html.PageLink(page)
+        </b>
+    }
+
+}

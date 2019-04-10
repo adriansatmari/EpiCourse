@@ -1,0 +1,29 @@
+﻿@model CommerceTraining.SupportingClasses.NodeEntryCombo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 @Html.EditAttributes(m => m.CurrentContent.Name)>@Html.DisplayFor(m => m.CurrentContent.Name)</h2>
+
+<div @Html.EditAttributes(m => m.CurrentContent.Code)>
+    @Html.DisplayFor(m => m.CurrentContent.Code)
+</div>
+
+<div @Html.EditAttributes(m => m.CurrentContent.ContentType)>
+    @Html.DisplayFor(m => m.CurrentContent.ContentType)
+</div>
+
+<ul>
+    @foreach (var item in Model.Nodes)
+    {
+        <li><a href="@item.url">@item.name</a><img src="@item.imageThumbUrl" /></li>
+    }
+</ul>
+
+<ul>
+    @foreach (var item in Model.Entries)
+    {
+        <li><a href="@item.url">@item.name</a><img src="@item.imageThumbUrl" /></li>
+    }
+</ul>

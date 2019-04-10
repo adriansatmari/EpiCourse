@@ -1,0 +1,50 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model CommerceTraining.Models.ViewModels.CartViewModel
+
+<div>
+    Cart page
+</div>
+
+<div>
+    ------------
+</div>
+<div>
+    Processing messages:
+    @Model.WarningMessage
+</div>
+
+<div>
+    @*Add this in the promo-module*@
+    promotions:
+    @foreach (var item in Model.PromotionMessage)
+    {
+        @item
+    }
+</div>
+
+<div>
+    LineItems
+    <ul>
+        @foreach (var item in Model.LineItems)
+        {
+            <li>
+                Code: @item.Code
+                Placed Price: @item.PlacedPrice.ToString("C")
+                Qty: @item.Quantity.ToString("####")
+            </li>
+        }
+    </ul>
+</div>
+
+<div>
+    Cart total: @Model.SubTotal
+</div>
+
+<div>
+    @using (@Html.BeginForm("Checkout", "Cart", null ))
+    {
+    <button class="btn btn-sm btn-link">Check Out</button>
+    }
+</div>

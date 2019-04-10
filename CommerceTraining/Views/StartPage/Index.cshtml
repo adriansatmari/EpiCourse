@@ -1,0 +1,28 @@
+@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model CommerceTraining.Models.ViewModels.PageViewModel<CommerceTraining.Models.Pages.StartPage>
+
+<div>
+    @Html.PropertyFor(m => m.CurrentPage.Name)
+</div>
+
+<div>
+    @Html.PropertyFor(m => m.CurrentPage.MainBody)
+</div>
+
+
+@*ToDo: uncomment/create when the categories exist (Mod. C)*@
+<div>
+    Top Level Categories
+    <ul>
+        @foreach (var item in Model.topLevelCategories)
+        {
+
+            <li>
+                @Html.ContentLink(item.ContentLink)
+            </li>
+        }
+    </ul>
+</div>
+

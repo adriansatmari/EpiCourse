@@ -1,0 +1,32 @@
+﻿
+@model CommerceTraining.Models.ViewModels.ShirtProductViewModel
+
+@*@{
+    ViewBag.Title = "Index";
+}*@
+
+<div>
+    <img src=@Model.ImageUrl>
+</div>
+
+<div>
+    
+  @Html.DisplayFor(m => m.CurrentContent.ContentType)
+</div>
+
+<ul>
+    @foreach (var item in Model.VariantLinks)
+    {
+        <li>@Html.ContentLink(item)</li>
+    }
+</ul>
+
+@{Html.BeginForm();}
+
+@Html.DropDownList("size", Model.Sizes)
+
+@Html.DropDownList("color", Model.Colors)
+
+<input type="submit" value="Go" />
+
+@{Html.EndForm();}

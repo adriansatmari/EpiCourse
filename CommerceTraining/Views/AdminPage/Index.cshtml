@@ -1,0 +1,53 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model CommerceTraining.Models.ViewModels.AdminViewModel
+
+<div>
+    @Html.PropertyFor(m => m.MainBody)
+</div>
+
+<div>
+    @Html.PropertyFor(m => m.ProductArea)
+</div>
+
+<div>
+    Link From Controller
+    @using (Html.BeginForm("TestLink", "AdminPage"))
+    {
+        <div>
+            <input type="submit" value="Link" />
+        </div>
+    }
+</div>
+
+@*<div>
+        Link in HTML
+        <div>
+            @Html.ActionLink("DeadEnd", "DeadEnd", new { node = new ContentReference(25), id = "Hello" })
+        </div>
+    </div>*@
+
+<div>
+    test BF issues
+    <div>
+        @Html.ActionLink("TestBF", "TestBF", new { id = "Hello" })
+    </div>
+</div>
+
+<div>
+    Check Promos
+    <div>
+        @Html.ActionLink("CheckPromos", "CheckPromos", new { id = "Hello" })
+    </div>
+</div>
+
+
+<div>
+    Check SplitShip
+    <div>
+        @Html.ActionLink("SplitShip", "SplitShip", new { id = "Hello" })
+    </div>
+</div>
+
+

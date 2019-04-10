@@ -1,0 +1,17 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model CommerceTraining.Models.ViewModels.SearchPageViewModel
+
+<div>
+  @Html.PropertyFor(m => m.CurrentPage.Name)
+</div>
+
+Search entries
+<div>
+    @using (Html.BeginForm("Search", "Search", FormMethod.Post))
+    {
+        <input type="text" name="keyWord" />
+        <input type="submit" value="Go" />
+    }
+</div>
