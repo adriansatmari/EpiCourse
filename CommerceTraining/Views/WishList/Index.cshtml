@@ -1,0 +1,10 @@
+﻿@using EPiServer.Cms.Shell
+@model CommerceTraining.Models.ViewModels.WishListViewModel
+
+@foreach (var item in Model.variationContentList)
+{
+    
+    <li><a href="@item.PublicUrl()">@item.DisplayName</a> </li>
+    <p>@item.ThumbnailUrl()</p>
+    <p>________________</p>
+}

@@ -337,6 +337,7 @@
     <Compile Include="Controllers\ShirtProductController.cs" />
     <Compile Include="Controllers\ShirtVariationController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -360,6 +361,7 @@
     <Compile Include="Models\Pages\SearchPage.cs" />
     <Compile Include="Models\Pages\SitePageBase.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
+    <Compile Include="Models\Pages\WishListPage.cs" />
     <Compile Include="Models\ViewModels\AccountViewModel.cs" />
     <Compile Include="Models\ViewModels\AdminViewModel.cs" />
     <Compile Include="Models\ViewModels\BlouseProductViewModel.cs" />
@@ -372,16 +374,23 @@
     <Compile Include="Models\ViewModels\SearchResultViewModel.cs" />
     <Compile Include="Models\ViewModels\ShirtProductViewModel.cs" />
     <Compile Include="Models\ViewModels\ShirtVariationViewModel.cs" />
+    <Compile Include="Models\ViewModels\WishListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\BaseResponse.cs" />
+    <Compile Include="Services\WishList\WishListService.cs" />
     <Compile Include="SupportingClasses\NameAndUrls.cs" />
     <Compile Include="SupportingClasses\NodeEntryCombo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
+    <Folder Include="Services\Variant\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Catalog\_PlaceHolder.txt" />
     <Content Include="Models\Properties\_PlaceHolder.txt" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Static\css\bootstrap-collapse.js" />
     <Content Include="Static\css\bootstrap-responsive.css" />
     <Content Include="Static\css\bootstrap.css" />
@@ -446,6 +455,8 @@
     <Content Include="modules\_protected\EPiServer.Commerce.Shell.ManagerIntegration\EPiServer.Commerce.Shell.ManagerIntegration.zip" />
     <Content Include="modules\_protected\EPiServer.Packaging.UI\web.config" />
     <Content Include="modules\_protected\EPiServer.Packaging.UI\EPiServer.Packaging.UI.zip" />
+    <Content Include="Views\WishList\Index.cshtml" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

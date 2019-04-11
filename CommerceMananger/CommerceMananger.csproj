@@ -287,6 +287,10 @@
     <Content Include="Configs\ecf.security.config" />
     <Content Include="Configs\ecf.ssl.config" />
     <Content Include="Configs\Mediachase.Search.config" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

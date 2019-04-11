@@ -337,12 +337,13 @@ namespace CommerceTraining.Controllers
         // RoCe - Needs an update
         public void AddToWishList(ShirtVariation currentContent)
         {
-            // Optional lab in Mod. D ... just create a WishList for inspection in CM
-            ICart myWishList = _orderRepository.LoadOrCreateCart<ICart>
+			
+			ICart myWishList = _orderRepository.LoadOrCreateCart<ICart>
                 (PrincipalInfo.CurrentPrincipal.GetContactId(), "WishList");
 
             ILineItem lineItem = _orderFactory.CreateLineItem(currentContent.Code, myWishList);
             myWishList.AddLineItem(lineItem);
+
             _orderRepository.Save(myWishList);
 
             // If using "CreateCart" (an identical cart) - we get: 
@@ -350,7 +351,8 @@ namespace CommerceTraining.Controllers
             // ...Creating duplicated cart is not allowed :)
         }
 
-        protected static CustomerContact GetContact()
+
+		protected static CustomerContact GetContact()
         {
             return CustomerContext.Current.GetContactById(GetContactId());
         }
